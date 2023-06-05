@@ -3,16 +3,16 @@
 # Features 
 
 Current features:
-- Total revenue, added tax costs (MVA) and tax costs
+- **Total revenue, added tax costs (MVA) and tax costs**
 
 ![Alt Text](/img/Nokkeltall.PNG)
 
 
-- Creating and editing hires
+- **Creating and editing hires**
 
 ![Alt Text](/img/Oppdrag.PNG)
 
-- Creating invoice pdf
+- **Creating invoice pdf**
 
 ![Alt Text](/img/Faktura.PNG)
 

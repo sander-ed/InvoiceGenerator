@@ -5,16 +5,16 @@
 Current features:
 - Total revenue, added tax costs (MVA) and tax costs
 
-![Alt Text](~/img/nokkeltall.png)
+![Alt Text](/img/nokkeltall.png)
 
 
 - Creating and editing hires
 
-![Alt Text](~/img/oppdrag.png)
+![Alt Text](/img/oppdrag.png)
 
 - Creating invoice pdf
 
-![Alt Text](~/img/Faktura.png)
+![Alt Text](/img/Faktura.png)
 
 Areas of improvement:
 - Adding functionality checking if customer has paid - api with your bank

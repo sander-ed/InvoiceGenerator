@@ -19,7 +19,7 @@ In main folder run npm install to install all dependencies for react app.
 
 In backend folder run npm install to install all dependencies for backend server.
 
-Initalize the following:
+Initalize the following on three different command lines:
 - For running frontend react app - in the project directory: npm start
 - For running backend API - in the backend directory: node index.js
 - For running database - download mongoDB and run command: mongod

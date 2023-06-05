@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
+import Header from "./components/Invoicing/Header";
+import ParentInvoiceInfo from "./components//Invoicing/ParentInvoiceInfo";
+import Requests from "./components/Dash/MainDash";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Requests />
+      </div>
+    <div className="container mt-4 mb-4">
+      <div className="row">
+        <Header/>
+      </div>
+      <div className="row">
+        <ParentInvoiceInfo />
+      </div>
     </div>
+  </div>
+
+    
   );
 }
 

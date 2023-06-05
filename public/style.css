@@ -1,0 +1,58 @@
+.input-inv {
+    font-weight: bold;
+    
+
+}
+
+.input-inv input{
+    width: 100%;
+    
+}
+
+.invoice-pdf-border {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    border: 1px solid black;
+    
+}
+
+.invoice-pdf {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.table-dates {
+    text-align: left;
+    font-size: 0.7rem; /* Adjust the font size as desired */
+}
+
+.table-sum {
+    min-height: 50mm;
+    max-height: 100mm;
+}
+
+.div-spacer {
+    min-height: 104mm;
+}
+
+footer {
+    
+    margin-top: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: .8rem;
+  }
+
+
+.delete-button {
+    height: 40px;
+   
+}
+
+.card-hover:hover {
+    border: 1.5px solid black;
+    background-color: #e0dede;
+}

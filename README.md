@@ -1,4 +1,15 @@
-# Getting Started with Invoice generator
+# Invoice generator for sole proprietorship (enkeltpersonforetak)
+
+# Features 
+
+Current features:
+- Total revenue, added tax costs (MVA) and tax costs
+- Creating and editing hires
+- Creating invoice pdf
+
+Areas of improvement:
+- Adding functionality checking if customer has paid - api with your bank
+- Sending emails from the react frontend
 
 # In order to run app
 
@@ -52,13 +63,3 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 intstall for free from mongodb.com
 
-# Features 
-
-Current features:
-- Total revenue, added tax costs (MVA) and tax costs
-- Creating and editing hires
-- Creating invoice pdf
-
-Areas of improvement:
-- Adding functionality checking if customer has paid - api with your bank
-- Sending emails from the react frontend

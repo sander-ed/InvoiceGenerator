@@ -51,3 +51,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 # MongoDB
 
 intstall for free from mongodb.com
+
+# Features 
+
+Current features:
+- Total revenue, added tax costs (MVA) and tax costs
+- Creating and editing hires
+- Creating invoice pdf
+
+Areas of improvement:
+- Adding functionality checking if customer has paid - api with your bank
+- Sending emails from the react frontend

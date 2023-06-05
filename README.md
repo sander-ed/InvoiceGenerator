@@ -13,7 +13,11 @@ Areas of improvement:
 
 # In order to run app
 
-Everything is ran locally on PC
+Everything is ran locally on PC.
+
+In main folder run npm install to install all dependencies for react app.
+
+In backend folder run npm install to install all dependencies for backend server.
 
 Initalize the following:
 - For running frontend react app - in the project directory: npm start

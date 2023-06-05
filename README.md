@@ -19,6 +19,8 @@ Current features:
 Areas of improvement:
 - Adding functionality checking if customer has paid - api with your bank
 - Sending emails from the react frontend
+- Adding multiple rows in invoice
+- Exporting pdf as vector and not png format
 
 # In order to run app
 

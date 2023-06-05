@@ -5,12 +5,12 @@
 Current features:
 - Total revenue, added tax costs (MVA) and tax costs
 
-![Alt Text](/img/nokkeltall.PNG)
+![Alt Text](/img/Nokkeltall.PNG)
 
 
 - Creating and editing hires
 
-![Alt Text](/img/oppdrag.PNG)
+![Alt Text](/img/Oppdrag.PNG)
 
 - Creating invoice pdf
 

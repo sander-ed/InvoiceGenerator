@@ -3,6 +3,8 @@ import CreateSaleInput from './CreateSaleInput';
 import Invoice from './Invoice';
 import PDFgenerator from './PDFgenerator';
 import SendData from './SendData';
+import { sum } from 'pdf-lib';
+import moment from 'moment';
 
 function ParentInvoiceInfo() {
 
@@ -26,16 +28,27 @@ function ParentInvoiceInfo() {
 
 
       const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value, type } = e.target;
+        
+        let formattedValue = value;
+  
+        if (type === 'date') {
+          const date = new Date(value);
+         
+          formattedValue = moment(date).format('YYYY-MM-DD'); // Using Moment.js
+          console.log(formattedValue)
+          //formattedValue = date.toLocaleDateString('en-GB'); // Using to*/
+        }
+
         setSaleData((prevData) => ({
           ...prevData,
-          [name]: value
+          [name]: formattedValue
         }));
       };
 
       const handleTaxChange = (e) => {
-        const { name, value } = e.target;
-        const tax = value == 'on' ? true : false
+        const { name, checked } = e.target;
+        const tax = checked
         const uPrice = saleData.unitPrice
         const sumPrice = uPrice * saleData.numberUnits * (1 + (tax ? .25 : 0))
         const sumTaxes = uPrice * saleData.numberUnits * (tax ? .25 : 0)
@@ -57,6 +70,32 @@ function ParentInvoiceInfo() {
           expireDate: expireDate.toISOString().slice(0, 10)
         }));
       }, [saleData.invoiceDate]);
+
+      
+      const sumTheRow = () => {
+        const sumPrice = saleData.unitPrice * saleData.numberUnits * (1 + (saleData.addedTax ? .25 : 0))
+
+        return sumPrice
+        
+      }
+
+      const sumTheTaxes = () => {
+        
+        const sumTaxes = saleData.unitPrice * saleData.numberUnits * (saleData.addedTax ? .25 : 0)
+
+        return sumTaxes
+      }
+      
+      // Updating sum and taxes 
+      useEffect(() => {
+
+        setSaleData((prevData) => ({
+          ...prevData,
+          sumRow : sumTheRow(),
+          sumTax : sumTheTaxes()
+        }))
+      }, [saleData.unitPrice, saleData.numberUnits, saleData.addedTax])
+
       
 
 

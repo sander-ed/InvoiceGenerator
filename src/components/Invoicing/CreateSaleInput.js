@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import moment from 'moment';
 
 function CreateSaleInput({saleData, handleInputChange, handleTaxChange}) {
   
-
   return (
     <div className='input-inv'>
       <div>
@@ -74,7 +74,7 @@ function CreateSaleInput({saleData, handleInputChange, handleTaxChange}) {
         <input
             type="date"
             name="invoiceDate"
-            value={saleData.invoiceDate}
+            value={moment(saleData.invoiceDate).format('YYYY-MM-DD')}
             onChange={handleInputChange}
           />
       </div>
@@ -86,7 +86,7 @@ function CreateSaleInput({saleData, handleInputChange, handleTaxChange}) {
         <input
             type="date"
             name="expireDate"
-            value={saleData.expireDate}
+            value={moment(saleData.expireDate).format('YYYY-MM-DD')}
             onChange={handleInputChange}
           />
       </div>
@@ -98,7 +98,7 @@ function CreateSaleInput({saleData, handleInputChange, handleTaxChange}) {
         <input
             type="date"
             name="deliveredDate"
-            value={saleData.deliveredDate}
+            value={moment(saleData.deliveredDate).format('YYYY-MM-DD')}
             onChange={handleInputChange}
           />
       </div>
@@ -142,6 +142,8 @@ function CreateSaleInput({saleData, handleInputChange, handleTaxChange}) {
             />
           </label>
       </div>
+      
+
     </div>
   );
 }

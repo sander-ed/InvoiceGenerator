@@ -22,7 +22,7 @@ mongoose.connection.on('disconnected', () => {
 function get(req, res) {
     Sale.find({})
     .then(sales => {
-      console.log('All sales:', sales);
+      
       
       const salesData = sales.map(sale => sale.toObject()); // Convert Mongoose documents to plain JavaScript objects
       
@@ -42,7 +42,6 @@ function getSale(req, res, id) {
   
   Sale.findById(id)
     .then(sale => {
-      console.log('Sale', sale)
 
       res.json({ success: true, data: sale })
     })
@@ -57,7 +56,6 @@ function post(req, res) {
   const sale = new Sale(saleData);
   sale.save()
     .then(() => {
-      console.log('Record saved!');
       res.json({ success: true }); // Send a JSON response indicating success
     })
     .catch(error => {
@@ -68,7 +66,7 @@ function post(req, res) {
 
 
 function put(req, res, id) {
-
+  
   Sale.findByIdAndUpdate({_id: id}, 
     req.body, 
     {new:true})

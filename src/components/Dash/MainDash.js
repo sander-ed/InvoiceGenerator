@@ -62,7 +62,7 @@ function Requests() {
       <h2 className='mt-4'>Liste over oppdrag</h2>
       <hr></hr>
       <Hiring salesData={salesData} handleOnClick={handleOnClick}/>
-      <UpateSale id = {idClickedCard} clicked={clickedHiring} handleOnClick = {handleButtonClick}/>
+      <UpateSale id={idClickedCard} clicked={clickedHiring} handleOnClick={handleButtonClick}/>
     </div>
   );
 }

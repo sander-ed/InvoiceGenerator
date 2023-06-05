@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import CreateSaleInput from "../../Invoicing/CreateSaleInput";
-import './modal.css'
+import './modal.css';
+
+const { requestSale, updateSale } = require('../../../Api.js')
 
 
 function UpateSale({id, clicked, handleOnClick}) {
@@ -9,50 +11,74 @@ function UpateSale({id, clicked, handleOnClick}) {
     const [saleData, setSaleData] = useState({})
     
     useEffect(() => {
-      requestSale()
+      
+      requestSaleApi()
         
-    }, []);
+    }, [id]);
 
-    useEffect(() => {
-      if (clicked) {
-        requestSale();
-      }
-    }, [clicked]);
+    
 
     // Duplicated code!
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setSaleData((prevData) => ({
-          ...prevData,
-          [name]: value
-        }));
+        const { name, value, checked } = e.target;
+        
+        setSaleData((prevData) => {
+          const tax = checked;
+          const uPrice = name == "unitPrice" ? value : prevData.unitPrice;
+          const numUnits = name == "numberUnits" ? value : prevData.numberUnits
+          const sumPrice = uPrice * numUnits * (1 + (tax ? 0.25 : 0));
+          const sumTaxes = uPrice * numUnits * (tax ? 0.25 : 0);
+      
+          return {
+            ...prevData,
+            [name]: value,
+            sumRow: sumPrice,
+            sumTaxes: sumTaxes
+          };
+        });
       };
+    
       
     // Duplicated
     const handleTaxChange = (e) => {
-      const tax = value == 'on' ? true : false
-      const { name, value } = e.target;
-      const uPrice = saleData.unitPrice
-      const sumPrice = uPrice * saleData.numberUnits * (1 + (tax ? .25 : 0))
-      const sumTaxes = uPrice * saleData.numberUnits * (tax ? .25 : 0)
-      setSaleData((prevData) => ({
+      const { name, checked } = e.target;
+      setSaleData((prevData) => {
+        const tax = checked;
+        const uPrice = prevData.unitPrice;
+        const sumPrice = uPrice * prevData.numberUnits * (1 + (tax ? 0.25 : 0));
+        const sumTaxes = uPrice * prevData.numberUnits * (tax ? 0.25 : 0);
+    
+        return {
           ...prevData,
           [name]: tax,
           sumRow: sumPrice,
           sumTax: sumTaxes
-        }));
-        console.log(saleData)
+        };
+      });
     }
     
     // ---------------------------------------------
     
-    const requestSale = () => {
+    
+
+
+    const fetchSaleData = async () => {
+      try {
+        const response = await requestSale(id); // Pass the id as an argument
+        setSaleData(response);
+      } catch (error) {
+        console.error('Error fetching sale data:', error);
+      }
+    };
+
+    const requestSaleApi = () => {
       fetch(`http://localhost:5000/sales/${id}`)
         .then(response => response.json())
         .then(data => {
           // Handle the response data
           console.log('This sales data:', data);
           if (data.success) {
+            //handleDateFormatter(data.data)
             setSaleData(data.data);
           }
         })

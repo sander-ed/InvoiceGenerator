@@ -39,7 +39,7 @@ function SendData({saleData}) {
       return (
         <div>
           <p> {isDataStored ? "Data stored successfully!" : ""}</p>
-          <button onClick={handleButtonClick} className="btn btn-outline-success"><spans className="bi bi-save text-success"></spans> Lagre oppdrag</button>
+          <button onClick={handleButtonClick} className="btn btn-outline-success"><span className="bi bi-save text-success"></span> Lagre oppdrag</button>
         </div>
       )
       

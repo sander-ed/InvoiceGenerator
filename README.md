@@ -65,5 +65,5 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 # MongoDB
 
-intstall for free from mongodb.com
+Install for free from mongodb.com
 

@@ -58,6 +58,7 @@ function Hiring({salesData, handleOnClick}) {
     return (
         <div className="row">
             {salesData.map(sale => (<HiringSummaryCard 
+              key={sale._id}
               id={sale._id} 
               hiring={sale.typeOfWork} 
               hiringSum={sale.sumRow} 

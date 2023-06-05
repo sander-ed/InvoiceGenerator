@@ -30,7 +30,7 @@ function PDFgenerator() {
     
     return (
         <div className="m-4">
-            <button onClick={exportToPDF} type="button" className="btn btn-outline-danger"><spans className="bi bi-file-pdf text-danger"></spans> Export PDF</button>
+            <button onClick={exportToPDF} type="button" className="btn btn-outline-danger"><span className="bi bi-file-pdf text-danger"></span> Export PDF</button>
         </div>
       );
 }

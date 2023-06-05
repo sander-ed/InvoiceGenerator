@@ -22,9 +22,21 @@ function Invoice({saleData}) {
                   <h5>Oppdragsiver</h5>
                   <table className='table'>
                     <tbody>
-                      <tr>{saleData.customer}</tr>
-                      <tr>{saleData.customerAdress}</tr>
-                      <tr>{saleData.customerZip}</tr>
+                      <tr>
+                        <td>
+                          {saleData.customer}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          {saleData.customerAdress}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          {saleData.customerZip}
+                        </td>
+                      </tr>                  
                     </tbody>
                   </table>             
                 </div>
